@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- urdu Font -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notonastaliqurdudraft.css">
+
+
+    <style>
+        body {
+	font-family: 'Noto Nastaliq Urdu Draft', serif;
+}
+    </style>
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+
+    <!-- (Optional) - Place this js code after initializing bootstrap.min.js or bootstrap.bundle.min.js -->
+ <!-- <script>
+    var triggerEl = document.querySelector('#navId a')
+    bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+ </script> -->
+ 
+  </header>
+
+
+  <main>
+<div class="container mt-5">
+    <div class="text-center fs-1 ">
+        جامعہ رشیدیہ آسیاآباد 
+    </div>
+    <div class="justify-content-center mt-4">
+      <div class="pb-1">
+
+        <input type="text" class="form-control w-50 " name="txt" id="serach_input"  placeholder="Search">
+      </div>
+
+      <table class="table-bordered table table-responsive" dir="rtl" id="table_list">
+        
+            <tr>
+                <th scope="col">سلسہ نمبر</th>
+                <th scope="col">نمبر شمار</th>
+                <th scope="col">نام کتاب اول</th>
+                <th scope="col">نام کتاب دوم</th>
+                <th scope="col">مصنف</th>
+                <th scope="col">مصنف لقب</th>
+                <th scope="col">زبان</th>
+                <th scope="col">فن</th>
+                <th scope="col">جلد</th>
+                <th scope="col">صفحات</th>
+                <th scope="col">طبع</th>
+                <th scope="col">کیفیت</th>
+                <th scope="col">الماری نمبر</th>
+                <th scope="col">خانہ نمبر</th>
+                
+            </tr>
+        
+      
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>زیندمان</td>
+            <td>آسیا آبادی</td>
+            <td>مختار حیدر</td>
+            <td>مفتی مختار</td>
+            <td>بلوچی</td>
+            <td>معلومات</td>
+            <td>4</td>
+            <td>352</td>
+            <td>آسیاآباد</td>
+            <td>اردو ترجمہ</td>
+            <td>22</td>
+            <td>43</td>
+          </tr>
+        
+      </table>
+        
+    </div>
+</div>
+
+  </main>
+
+  
+  <script>
+
+serach_input.addEventListener("keyup",function(){
+           var keyword = this.value;
+           keyword = keyword.toUpperCase();
+           var table = document.getElementById("table_list");
+           var all_tr = table.getElementsByTagName("tr");
+           for(var i=0; i<all_tr.length; i++){
+                   var all_columns = all_tr[i].getElementsByTagName("td");
+                   for(j=0;j<all_columns.length; j++){
+                       if(all_columns[j]){
+                           var column_value = all_columns[j].textContent || all_columns[j].innerText;
+                           column_value = column_value.toUpperCase();
+                           if(column_value.indexOf(keyword) > -1){
+                               all_tr[i].style.display = ""; // show
+                               break;
+                           }else{
+                               all_tr[i].style.display = "none"; // hide
+                           }
+                       }
+                   }
+               }
+       })    
+
+
+
+
+
+
+
+    // function myFunction() {
+    //   // Declare variables
+    //   var input, filter, table, tr, td, i, txtValue;
+    //   input = document.getElementById("myInput");
+    //   filter = input.value.toUpperCase();
+    //   table = document.getElementById("myTable");
+    //   tr = table.getElementsByTagName("tr");
+    
+    //   // Loop through all table rows, and hide those who don't match the search query
+    //   for (i = 0; i < tr.length; i++) {
+    //     td = tr[i].getElementsByTagName("td")[0];
+        
+    //     if (td) {
+    //       txtValue = td.textContent || td.innerText;
+    //       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    //         tr[i].style.display = "";
+    //       } else {
+    //         tr[i].style.display = "none";
+    //       }
+    //     }
+    //   }
+    // }
+    </script>  
+   
+
+
+
+
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
